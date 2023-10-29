@@ -1,31 +1,41 @@
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Welcome to my app</h1>
-      <MyButton />
-      <AboutPage />
-    </div>
-  );
-}
+const user = {
+  name: 'Hedy Lamarr',
+  imageUrl: 'https://i.imgur.com/yXOvdOSs.jpg',
+  imageSize: 90,
+};
 
-function AboutPage() {
+var isLoggedIn = false;
+
+
+export default function Profile() {
+  let content;
+  if (isLoggedIn) {
+    content = <AdminPanel />;
+  } else {
+    content = <LoginButton />;
+  }
   return (
     <>
-    <h1>About</h1>
-    <p className="hellomsg">Hello there.<br /> How do you do?</p>
-    
-    
+      {content}
     </>
-  )
-}
-
-function MyButton() {
-  return(
-    <button>I´m a button</button>
   );
-}
+};
 
-export default App;
+function AdminPanel() {
+  return (
+    <div>
+      <p>Admin</p>
+    </div>
+  );
+};
+
+function LoginButton() {
+  return (
+    <div>
+      <button>Login</button>
+    </div>
+  );
+};
