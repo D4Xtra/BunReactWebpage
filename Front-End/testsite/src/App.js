@@ -6,8 +6,20 @@ function App() {
     <div className="App">
       <h1>Welcome to my app</h1>
       <MyButton />
+      <AboutPage />
     </div>
   );
+}
+
+function AboutPage() {
+  return (
+    <>
+    <h1>About</h1>
+    <p className="hellomsg">Hello there.<br /> How do you do?</p>
+    
+    
+    </>
+  )
 }
 
 function MyButton() {
